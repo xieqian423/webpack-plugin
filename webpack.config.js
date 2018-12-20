@@ -3,7 +3,7 @@
  */
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const RemoveDebug = require('./wp-plugin/remove-DEBUG.js');
 
 module.exports = {
@@ -14,8 +14,26 @@ module.exports = {
         filename: "bundle.js"//打包后输出文件的文件名
     },
     plugins: [
-        new RemoveDebug({name: 'debug remove'}),
-        new HtmlWebpackPlugin({template: './index.html'})
+        new RemoveDebug({name: 'debug remove'})
+        // new HtmlWebpackPlugin({template: './index.html'})
     ]
+    /*
+    module: {
+        //rules: [
+        //    { test: /\.js$/, use: [{
+        //        loader: 'babel-loader',
+        //        options: {
+        //            "plugins": ["./babel-plugin/babel-test"]
+        //        }
+        //    }]}
+        //]
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                use: 'babel-loader'
+            }
+        ]
+    }
+    */
 };
 
