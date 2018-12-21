@@ -3,9 +3,9 @@ var t = require('babel-types');
 
 const visitor = {
     Identifier (path) {
-        console.log('Identifier ' + path.node.name);
+        // console.log('Identifier ' + path.node.name);
         if (path.node.name === 'console') {
-            console.log(path.node.name);
+            console.log('---console ' + path.node.name);
         }
     },
     BinaryExpression (path) {
